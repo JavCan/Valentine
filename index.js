@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
         // Eventos para móvil
-    container.addEventListener("touchstart", function() {
+    container.addEventListener("touchstart", function(e) {
         if (isMoved) {
             // Si ya se movió, lo devolvemos a su posición original
             card.style.transform = "translateY(0)";
