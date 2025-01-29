@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
         // Eventos para móvil
-    container.addEventListener("touchstart", function() {
+    container.addEventListener("touchend", function() {
         card.style.transform = "translateY(-90px)";
     });
 
