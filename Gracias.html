@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me gustas</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #fae1dd;
+            font-family: 'Montserrat';
+            text-align: center;
+            padding: 20px;
+        }
+
+        .mensaje {
+            margin: 20px;
+            font-size: 24px;
+            color: #d62828;
+            max-width: 600px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .gif-container {
+            margin: 20px;
+            width: 300px; /* Tamaño fijo para el contenedor */
+            max-width: 90%; /* Responsive en móviles */
+            animation: scaleIn 1s ease-out;
+        }
+
+        .gif-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(214, 40, 40, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Añadimos algunos corazones flotantes para decoración */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: floatHeart 4s ease-in infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mensaje">
+        <h1>Jijijij te adoro ❤️</h1>
+        <p>Te quiero mucho mi Valentine 🐄</p>
+    </div>
+    <div class="gif-container">
+        <div class="tenor-gif-embed" data-postid="11397231996208728070" data-share-method="host" data-aspect-ratio="1.09211" data-width="100%"><a href="https://tenor.com/view/besito-catlove-gif-11397231996208728070">Besito Catlove GIF</a>from <a href="https://tenor.com/search/besito-gifs">Besito GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    </div>
+
+    <!-- Contenedor para los corazones flotantes -->
+    <div class="hearts"></div>
+
+    <script>
+        // Función para crear corazones flotantes
+        function createHearts() {
+            const heartsContainer = document.querySelector('.hearts');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heartsContainer.appendChild(heart);
+
+            // Eliminar el corazón después de la animación
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        // Crear corazones cada 500ms
+        setInterval(createHearts, 500);
+    </script>
+</body>
+</html>
