@@ -13,6 +13,26 @@ document.addEventListener("DOMContentLoaded", function () {
         card.style.transform = "translateY(0)";
     });
 
+        // Eventos para móvil
+    container.addEventListener("touchstart", function(e) {
+        card.style.transform = "translateY(-90px)";
+    });
+
+    container.addEventListener("touchend", function(e) {
+        card.style.transform = "translateY(0)";
+    });
+
+        // Eventos para móvil
+    noBtn.addEventListener("touchstart", function(e) {
+        e.preventDefault();
+        moveButton();
+    });
+
+    noBtn.addEventListener("touchend", function(e) {
+        e.preventDefault();
+        moveButton();
+    });
+
     // Función para mover el botón a una posición aleatoria
     function moveButton() {
         const maxX = window.innerWidth - noBtn.offsetWidth;
