@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const card = document.querySelector(".card");
     const noBtn = document.querySelector(".no-btn");
     const yesBtn = document.querySelector(".yes-btn");
+    let isMoved = false;  
 
     // Funcionalidad de la carta
     container.addEventListener("mouseenter", function () {
@@ -14,12 +15,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
         // Eventos para móvil
-    container.addEventListener("touch", function() {
-        card.style.transform = "translateY(-90px)";
-    });
-
-    container.addEventListener("touch", function() {
-        card.style.transform = "translateY(0)";
+    container.addEventListener("touchstart", function() {
+        if (isMoved) {
+            // Si ya se movió, lo devolvemos a su posición original
+            card.style.transform = "translateY(0)";
+        } else {
+            // Si no se ha movido, lo movemos
+            card.style.transform = "translateY(-90px)";
+        }
+    
+        // Alternamos el estado
+        isMoved = !isMoved;
     });
 
         // Eventos para móvil
