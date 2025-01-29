@@ -1,31 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".container");
+    const valentines = document.querySelector(".valentines");
     const card = document.querySelector(".card");
     const noBtn = document.querySelector(".no-btn");
     const yesBtn = document.querySelector(".yes-btn");
-    let isMoved = false;  
 
     // Funcionalidad de la carta
-    container.addEventListener("mouseenter", function () {
+    valentines.addEventListener("mouseenter", function () {
         card.style.transform = "translateY(-90px)";
     });
 
-    container.addEventListener("mouseleave", function () {
+    valentines.addEventListener("mouseleave", function () {
         card.style.transform = "translateY(0)";
     });
 
         // Eventos para móvil
-    container.addEventListener("touchstart", function(e) {
-        if (isMoved) {
-            // Si ya se movió, lo devolvemos a su posición original
-            card.style.transform = "translateY(0)";
-        } else {
-            // Si no se ha movido, lo movemos
-            card.style.transform = "translateY(-90px)";
-        }
-    
-        // Alternamos el estado
-        isMoved = !isMoved;
+    valentines.addEventListener("touchstart", function(e) {
+        card.style.transform = "translateY(-90px)";
+    });
+
+    valentines.addEventListener("touchend", function(e) {
+        card.style.transform = "translateY(0)";
     });
 
         // Eventos para móvil
