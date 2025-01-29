@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const card = document.querySelector(".card");
     const noBtn = document.querySelector(".no-btn");
     const yesBtn = document.querySelector(".yes-btn");
-
+    let isMoved = false;
+    
     // Funcionalidad de la carta
     valentines.addEventListener("mouseenter", function () {
         card.style.transform = "translateY(-90px)";
@@ -14,13 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
         card.style.transform = "translateY(0)";
     });
 
-        // Eventos para móvil
-    valentines.addEventListener("touchstart", function(e) {
-        card.style.transform = "translateY(-90px)";
-    });
 
-    valentines.addEventListener("touchend", function(e) {
-        card.style.transform = "translateY(0)";
+    valentines.addEventListener("touchstart", function() {
+        if (isMoved) {
+            // Si ya se movió, lo devolvemos a su posición original
+            card.style.transform = "translateY(0)";
+        } else {
+            // Si no se ha movido, lo movemos
+            card.style.transform = "translateY(-90px)";
+        }
+    
+        // Alternamos el estado
+        isMoved = !isMoved;
     });
 
         // Eventos para móvil
