@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         card.style.transform = "translateY(-90px)";
     });
 
-    container.addEventListener("touchend", function() {
+    container.addEventListener("touchstart", function() {
         card.style.transform = "translateY(0)";
     });
 
