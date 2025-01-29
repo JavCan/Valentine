@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Funcionalidad del botón "Sí" - Redirección a nueva página
     yesBtn.addEventListener("click", function() {
-        window.location.href = "gracias.html"; // Cambia esto por la ruta de tu página de agradecimiento
+        window.location.href = "Gracias.html"; // Cambia esto por la ruta de tu página de agradecimiento
     });
 
     // Prevenir que el botón "No" se quede quieto si el usuario mantiene presionado
