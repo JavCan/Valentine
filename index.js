@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
         // Eventos para móvil
-    container.addEventListener("touchend", function(e) {
+    container.addEventListener("touchend", function() {
         card.style.transform = "translateY(-90px)";
     });
 
-    container.addEventListener("touchend", function(e) {
+    container.addEventListener("touchend", function() {
         card.style.transform = "translateY(0)";
     });
 
